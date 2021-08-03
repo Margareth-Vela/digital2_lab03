@@ -2709,6 +2709,12 @@ uint8_t contador=0;
 uint8_t cont_temp=0;
 uint8_t cont;
 
+uint8_t u_flag = 1;
+uint8_t d_flag = 0;
+uint8_t c_flag = 0;
+uint8_t unidad = 0;
+uint8_t decena = 0;
+
 uint8_t display_unidad;
 uint8_t display_decimal;
 uint8_t display_decimal_2;
@@ -2762,6 +2768,9 @@ void main(void) {
         cont_temp = 0;
         contador = 0;
         PORTD = 0;
+        u_flag = 1;
+        d_flag = 0;
+        c_flag = 0;
     }
     }
     return;
@@ -2804,7 +2813,23 @@ void __attribute__((picinterrupt(("")))) isr(void){
             }else if(var_temp==57){
                 cont_temp = 9;
             }
-        contador = contador + cont_temp;
+        if (u_flag == 1){
+            contador = cont_temp;
+            unidad = cont_temp;
+            u_flag = 0;
+            d_flag = 1;
+        }
+        else if (d_flag == 1){
+            contador = (unidad*10)+cont_temp;
+            decena = cont_temp;
+            d_flag = 0;
+            c_flag = 1;
+        }
+        else if (c_flag == 1){
+            contador = (unidad*100)+(decena*10)+cont_temp;
+            d_flag = 0;
+            c_flag = 1;
+        }
         }}
 
     if (TXIF == 1){
