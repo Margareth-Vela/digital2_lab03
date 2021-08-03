@@ -57,7 +57,9 @@
 //                          Variables
 //------------------------------------------------------------------------------
 uint8_t temporal = 0;
-
+uint8_t POT1; //Para ADC
+uint8_t POT2;
+uint8_t flag_1; //Bandera para el ADC
 
 //------------------------------------------------------------------------------
 //                          Prototipos
@@ -68,9 +70,31 @@ void setup(void);  //Configuración
 //                          Interrupciones
 //------------------------------------------------------------------------------
 void __interrupt() isr(void){
+   
+   if(ADIF == 1){
+        if (flag_1 == 1){ 
+            POT1 = ADRESH; //Se almacena el valor del primer potenciómetro
+            ADCON0bits.CHS0 = 1;//Cambiar de canal
+            flag_1 = 0;
+        } else{
+            POT2 = ADRESH; //Se almacena el valor del segundo potenciómetro
+            ADCON0bits.CHS0 = 0;//Cambiar de canal
+            flag_1 = 1;
+        }
+        
+        ADIF = 0; //Limpiar la bandera de ADC
+        __delay_us(60);
+        ADCON0bits.GO = 1; //Inicia la conversión de ADC
+    }  
+   
    if(SSPIF == 1){
-        PORTD = spiRead();
-        spiWrite(PORTB);
+        temporal = spiRead();
+        if(temporal == 1){
+            spiWrite(POT1);
+        }
+        else if(temporal == 2){
+            spiWrite(POT2);
+        }
         SSPIF = 0;
     }
 }
@@ -80,8 +104,7 @@ void __interrupt() isr(void){
 void main(void) {
     setup();
     while(1){
-       PORTB--;
-       __delay_ms(250);
+
     }
     return;
 }
@@ -89,20 +112,54 @@ void main(void) {
 //                          Configuración
 //------------------------------------------------------------------------------
 void setup(void){
-    ANSEL = 0;
-    ANSELH = 0;
+    //Configuracion reloj
+    OSCCONbits.IRCF2 = 1; //Frecuencia a 8MHZ
+    OSCCONbits.IRCF1 = 1;
+    OSCCONbits.IRCF0 = 1;
+    OSCCONbits.SCS = 1;
     
-    TRISB = 0;
-    TRISD = 0;
+    //Configurar entradas y salidas
+    ANSELH = 0x00;//Pines digitales
+    ANSEL = 0x03; //Pin analógico para POT
     
-    PORTB = 0;
-    PORTD = 0;
+    TRISA = 0x23; //Para salida del contador
+    TRISC = 0x18; //Para salida del display
+    TRISD = 0x00; //Para transistores
+    TRISE = 0x00; //Para led de alarma y potenciometro
     
-    INTCONbits.GIE = 1;         // Habilitamos interrupciones
-    INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE
+    PORTA = 0x00; //Se limpian los puertos
+    PORTC = 0x00;    
+    PORTD = 0x00;
+    PORTE = 0x00;
+    
+    //Configurar ADC
+    ADCON1bits.ADFM = 0; //Justificar a la izquierda
+    ADCON1bits.VCFG0 = 0; //Vss
+    ADCON1bits.VCFG1 = 0; //VDD
+
+    ADCON0bits.ADCS = 0b10; //ADC oscilador -> Fosc/32
+    ADCON0bits.CHS = 0;     //Comenzar en canal 0       
+    ADCON0bits.ADON = 1;    //Habilitar la conversión ADC
+    __delay_us(50); 
+    ADCON0bits.GO = 1;
+    
+   //Configurar la interrupcion
+    INTCONbits.GIE = 1;  //Enable interrupciones globales
+    INTCONbits.T0IE = 1;           
+    INTCONbits.T0IF = 0; 
+    INTCONbits.PEIE = 1; //Enable interrupciones periféricas
     PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
     TRISAbits.TRISA5 = 1;       // Slave Select
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-   
+    PIE1bits.ADIE = 1;   //Enable interrupción ADC
+    PIR1bits.ADIF = 0;   //Se limpia bandera de interrupción ADC
+        
+    //Configurar TMR0
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS2 = 1; //Prescaler 1:256
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS0 = 1;
+    TMR0 = 10;  //Se reinicia el TMR0
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);  
 }

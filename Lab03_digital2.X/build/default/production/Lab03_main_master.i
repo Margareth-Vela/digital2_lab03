@@ -1,4 +1,4 @@
-# 1 "Lab03_main_slave.c"
+# 1 "Lab03_main_master.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab03_main_slave.c" 2
-# 16 "Lab03_main_slave.c"
+# 1 "Lab03_main_master.c" 2
+# 16 "Lab03_main_master.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,7 +2488,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 16 "Lab03_main_slave.c" 2
+# 16 "Lab03_main_master.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2623,7 +2623,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 17 "Lab03_main_slave.c" 2
+# 17 "Lab03_main_master.c" 2
 
 # 1 "./SPI.h" 1
 # 17 "./SPI.h"
@@ -2659,8 +2659,17 @@ typedef enum
 void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 char spiRead(void);
-# 18 "Lab03_main_slave.c" 2
-# 29 "Lab03_main_slave.c"
+# 18 "Lab03_main_master.c" 2
+
+# 1 "./USART.h" 1
+# 13 "./USART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "./USART.h" 2
+
+
+void USART(void);
+# 19 "Lab03_main_master.c" 2
+# 30 "Lab03_main_master.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 
 
@@ -2691,11 +2700,21 @@ char spiRead(void);
 
 
 
-uint8_t temporal = 0;
+uint8_t POT = 1;
 uint8_t POT1;
 uint8_t POT2;
-uint8_t flag_1;
+uint8_t var_temp;
 
+uint8_t contador = 0;
+uint8_t cont;
+
+uint8_t display_unidad;
+uint8_t display_decimal;
+uint8_t display_decimal_2;
+uint8_t display_unidad_s2;
+uint8_t display_decimal_s2;
+uint8_t display_decimal_2_s2;
+int8_t flag;
 
 
 
@@ -2704,44 +2723,109 @@ void setup(void);
 
 
 
-void __attribute__((picinterrupt(("")))) isr(void){
+void main(void) {
+    setup();
+    while(1){
+       PORTCbits.RC2 = 0;
+       _delay((unsigned long)((1)*(8000000/4000.0)));
 
-   if(ADIF == 1){
-        if (flag_1 == 1){
-            POT1 = ADRESH;
-            ADCON0bits.CHS0 = 1;
-            flag_1 = 0;
-        } else{
-            POT2 = ADRESH;
-            ADCON0bits.CHS0 = 0;
-            flag_1 = 1;
-        }
+       spiWrite(POT);
+       if (POT == 1) {
+       POT2 = spiRead();
+       POT = 2;
+       }
+       else if (POT == 2) {
+       POT1 = spiRead();
+       POT = 1;
+       }
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+       PORTCbits.RC2 = 1;
+       _delay((unsigned long)((250)*(8000000/4000.0)));
 
-        ADIF = 0;
-        _delay((unsigned long)((60)*(8000000/4000000.0)));
-        ADCON0bits.GO = 1;
+    if(cont > 15){
+         cont = 0;
+         TXIE = 1;
+     }
+
+
+    display_unidad = POT1 / 51;
+    display_decimal = ((POT1 * 100 / 51) - (display_unidad*100))/10;
+    display_decimal_2 = ((POT1 * 100 / 51) - (display_unidad*100) - (display_decimal*10));
+
+    display_unidad_s2 = POT2 / 51;
+    display_decimal_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100))/10;
+    display_decimal_2_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100) - (display_decimal_s2*10));
     }
-
-   if(SSPIF == 1){
-        temporal = spiRead();
-        if(temporal == 1){
-            spiWrite(POT1);
-        }
-        else if(temporal == 2){
-            spiWrite(POT2);
-        }
-        SSPIF = 0;
-    }
+    return;
 }
 
 
 
-void main(void) {
-    setup();
-    while(1){
 
+void __attribute__((picinterrupt(("")))) isr(void){
+    if (INTCONbits.T0IF){
+        cont++;
+        INTCONbits.T0IF = 0;
     }
-    return;
+
+    if(PIR1bits.RCIF == 1){
+
+        RA7 = 1;
+        if (RCREG == 0x0D){
+        RA7 = 0;
+            if (var_temp == 0x2B){
+                contador++;
+                if (contador > 255){
+                    contador = 0;
+                } }
+
+            else if (var_temp == 0x2D){
+                contador--;
+                if (contador > 255){
+                    contador = 0;
+                }
+            }
+        }
+        else {
+        var_temp = RCREG;
+        }
+    }
+
+    if (TXIF == 1){
+        if (flag == 0){
+            TXREG = display_unidad + 48;
+            flag = 1;
+        } else if (flag == 1){
+            TXREG = 0x2E;
+            flag = 2;
+        } else if (flag == 2){
+            TXREG = display_decimal + 48;
+            flag = 3;
+        } else if (flag == 3){
+            TXREG = display_decimal_2 + 48;
+            flag = 4;
+        } else if (flag == 4){
+            TXREG = 0x2D;
+            flag = 5;
+        }
+        else if (flag == 5){
+            TXREG = display_unidad_s2 + 48;
+            flag = 6;
+        } else if (flag == 6){
+            TXREG = 0x2E;
+            flag = 7;
+        } else if (flag == 7){
+            TXREG = display_decimal_s2 + 48;
+            flag = 8;
+        } else if (flag == 8){
+            TXREG = display_decimal_2_s2 + 48;
+            flag = 9;
+        } else if (flag == 9){
+            TXREG = 0x0D;
+            flag = 0;
+        }
+    TXIF = 0;
+    }
 }
 
 
@@ -2755,10 +2839,10 @@ void setup(void){
 
 
     ANSELH = 0x00;
-    ANSEL = 0x03;
+    ANSEL = 0x00;
 
-    TRISA = 0x23;
-    TRISC = 0x18;
+    TRISA = 0x00;
+    TRISC = 0x90;
     TRISD = 0x00;
     TRISE = 0x00;
 
@@ -2768,26 +2852,24 @@ void setup(void){
     PORTE = 0x00;
 
 
-    ADCON1bits.ADFM = 0;
-    ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 0;
-
-    ADCON0bits.ADCS = 0b10;
-    ADCON0bits.CHS = 0;
-    ADCON0bits.ADON = 1;
-    _delay((unsigned long)((50)*(8000000/4000000.0)));
-    ADCON0bits.GO = 1;
-
-
     INTCONbits.GIE = 1;
     INTCONbits.T0IE = 1;
     INTCONbits.T0IF = 0;
-    INTCONbits.PEIE = 1;
-    PIR1bits.SSPIF = 0;
-    PIE1bits.SSPIE = 1;
-    TRISAbits.TRISA5 = 1;
-    PIE1bits.ADIE = 1;
-    PIR1bits.ADIF = 0;
+
+
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 1;
+
+    BAUDCTLbits.BRG16 = 1;
+
+    SPBRG = 207;
+    SPBRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 1;
+
+    TXSTAbits.TXEN = 1;
 
 
     OPTION_REGbits.T0CS = 0;
@@ -2796,5 +2878,9 @@ void setup(void){
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 1;
     TMR0 = 10;
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
+    TRISC2 = 0;
+    PORTCbits.RC2 = 1;
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
 }

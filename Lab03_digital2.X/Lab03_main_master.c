@@ -16,6 +16,7 @@
  #include <xc.h>
  #include <stdint.h>
  #include "SPI.h"
+ #include "USART.h"
 
 //------------------------------------------------------------------------------
 //                          Directivas del compilador
@@ -56,9 +57,21 @@
 //------------------------------------------------------------------------------
 //                          Variables
 //------------------------------------------------------------------------------
+uint8_t POT = 1;
+uint8_t POT1; //Para ADC
+uint8_t POT2;
+uint8_t var_temp; //Variable que recibe los datos del USART
+  
+uint8_t contador = 0; //Contador
+uint8_t cont; //Contador TMR0
 
-
-
+uint8_t display_unidad; //Para desplegar el valor de los potenciómetros con
+uint8_t display_decimal;//dos decimales
+uint8_t display_decimal_2;
+uint8_t display_unidad_s2;
+uint8_t display_decimal_s2;
+uint8_t display_decimal_2_s2;
+int8_t flag; //Bandera para saber que dato enviar por el USART
 //------------------------------------------------------------------------------
 //                          Prototipos
 //------------------------------------------------------------------------------
@@ -73,29 +86,157 @@ void main(void) {
        PORTCbits.RC2 = 0;       //Slave Select
        __delay_ms(1);
        
-       spiWrite(PORTB);
-       PORTD = spiRead();
-       
+       spiWrite(POT);
+       if (POT == 1) {
+       POT2 = spiRead();
+       POT = 2;
+       }
+       else if (POT == 2) {
+       POT1 = spiRead();
+       POT = 1;
+       }
        __delay_ms(1);
-       PORTCbits.RC2 = 1;       //Slave Deselect 
-       
+       PORTCbits.RC2 = 1;       //Slave Deselect       
        __delay_ms(250);
-       PORTB++;
+       
+    if(cont > 15){ //Se reinicia el contador después de 45ms y se enciende
+         cont = 0; //el enable para enviar datos via USART
+         TXIE = 1; 
+     }
+     
+    //Conversiones para el display del LCD para los 3 sensores
+    display_unidad = POT1 / 51;
+    display_decimal = ((POT1 * 100 / 51) - (display_unidad*100))/10;
+    display_decimal_2 = ((POT1 * 100 / 51) - (display_unidad*100) - (display_decimal*10));  
+    
+    display_unidad_s2 = POT2 / 51;
+    display_decimal_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100))/10;
+    display_decimal_2_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100) - (display_decimal_s2*10));
     }
     return;
 }
 
 //------------------------------------------------------------------------------
+//                          Interrupciones
+//------------------------------------------------------------------------------
+void __interrupt() isr(void){
+    if (INTCONbits.T0IF){           // INTERRUPCION TMR0
+        cont++;
+        INTCONbits.T0IF = 0;        // Limpiar la bandera de interrupción TMR0
+    }
+        
+    if(PIR1bits.RCIF == 1){ //Empieza a recibir datos del USART
+ 
+        RA7 = 1;//bandera
+        if (RCREG ==  0x0D){
+        RA7 = 0;
+            if (var_temp == 0x2B){
+                contador++; //El contador aumenta de valor
+                if (contador > 255){
+                    contador = 0;
+                } }
+            
+            else if (var_temp == 0x2D){
+                contador--; //El contador disminuye de valor             
+                if (contador > 255){
+                    contador = 0;
+                }
+            }
+        } 
+        else {
+        var_temp = RCREG; //Si no se envía el caracter + o -, no realiza 
+        }                 //alguna acción
+    }
+    
+    if (TXIF == 1){
+        if (flag == 0){//Envía los datos al USART de los dos potenciómetros
+            TXREG = display_unidad + 48; //Envía las unidades del POT1
+            flag = 1;
+        } else if (flag == 1){
+            TXREG = 0x2E;
+            flag = 2;
+        } else if (flag == 2){
+            TXREG = display_decimal + 48; //Envía el primer decimal del POT1
+            flag = 3;
+        } else if (flag == 3){
+            TXREG = display_decimal_2 + 48; //Envía el segundo decimal del POT1
+            flag = 4;
+        } else if (flag == 4){
+            TXREG = 0x2D;
+            flag = 5;
+        }
+        else if (flag == 5){
+            TXREG = display_unidad_s2 + 48;//Envía las unidades del POT2
+            flag = 6;
+        } else if (flag == 6){
+            TXREG = 0x2E;
+            flag = 7;
+        } else if (flag == 7){
+            TXREG = display_decimal_s2 + 48; //Envía el primer decimal del POT2
+            flag = 8;
+        } else if (flag == 8){
+            TXREG = display_decimal_2_s2 + 48; //Envía el segundo decimal del POT2
+            flag = 9;
+        } else if (flag == 9){
+            TXREG = 0x0D;
+            flag = 0;
+        }       
+    TXIF = 0; //Se limpia la bandera
+    }   
+}
+//------------------------------------------------------------------------------
 //                          Configuración
 //------------------------------------------------------------------------------
 void setup(void){
-    ANSEL = 0;
-    ANSELH = 0;
+    //Configuracion reloj
+    OSCCONbits.IRCF2 = 1; //Frecuencia a 8MHZ
+    OSCCONbits.IRCF1 = 1;
+    OSCCONbits.IRCF0 = 1;
+    OSCCONbits.SCS = 1;
+    
+    //Configurar entradas y salidas
+    ANSELH = 0x00;//Pines digitales
+    ANSEL = 0x00; //Pin analógico para POT
+    
+    TRISA = 0x00; //Para salida del contador
+    TRISC = 0x90; //Para salida del display
+    TRISD = 0x00; //Para transistores
+    TRISE = 0x00; //Para led de alarma y potenciometro
+    
+    PORTA = 0x00; //Se limpian los puertos
+    PORTC = 0x00;    
+    PORTD = 0x00;
+    PORTE = 0x00;
+        
+   //Configurar la interrupcion
+    INTCONbits.GIE = 1;  //Enable interrupciones globales
+    INTCONbits.T0IE = 1;           
+    INTCONbits.T0IF = 0; 
+        
+    //Configuración de TX y RX
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 1;
+    
+    BAUDCTLbits.BRG16 = 1;
+    
+    SPBRG = 207;
+    SPBRGH = 0;
+    
+    RCSTAbits.SPEN = 1;//Configuración del USART y Baud Rate
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 1;
+    
+    TXSTAbits.TXEN = 1; 
+    
+    //Configurar TMR0
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS2 = 1; //Prescaler 1:256
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS0 = 1;
+    TMR0 = 10;  //Se reinicia el TMR0
+    
     TRISC2 = 0;
-    TRISB = 0;
-    TRISD = 0;
-    PORTB = 0;
-    PORTD = 0;
     PORTCbits.RC2 = 1;
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
