@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"78 Lab03_main_master.c
-[; ;Lab03_main_master.c: 78:                 contador++;
+"79 Lab03_main_master.c
+[; ;Lab03_main_master.c: 79: 
 [v _setup `(v ~T0 @X0 0 ef ]
 "296 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 296:     struct {
@@ -27,6 +27,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4541 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4541: extern volatile __bit TXIE __attribute__((address(0x464)));
 [v _TXIE `Vb ~T0 @X0 0 e@1124 ]
+"358
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 358:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 357: typedef union {
+[u S11 `S12 1 ]
+[n S11 . . ]
+"369
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
+"352
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "465
@@ -55,12 +69,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-"4100
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4100: extern volatile __bit RA7 __attribute__((address(0x2F)));
-[v _RA7 `Vb ~T0 @X0 0 e@47 ]
 "1140
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"228
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "4544
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4544: extern volatile __bit TXIF __attribute__((address(0x64)));
 [v _TXIF `Vb ~T0 @X0 0 e@100 ]
@@ -91,6 +105,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1416
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1478
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1540
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
@@ -106,9 +123,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "290
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"352
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "414
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
@@ -192,7 +206,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4454
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4454: extern volatile __bit TRISC2 __attribute__((address(0x43A)));
 [v _TRISC2 `Vb ~T0 @X0 0 e@1082 ]
-"241 Lab03_main_master.c
+"284 Lab03_main_master.c
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -439,523 +453,748 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "30 Lab03_main_master.c
-[; ;Lab03_main_master.c: 30:        PORTCbits.RC2 = 0;
+[; ;Lab03_main_master.c: 30:     while(1){
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "33
-[; ;Lab03_main_master.c: 33:        spiWrite(POT);
+[; ;Lab03_main_master.c: 33: 
 [p x WDTE  =  OFF  ]
 "35
-[; ;Lab03_main_master.c: 35:        POT2 = spiRead();
+[; ;Lab03_main_master.c: 35:        if (POT == 1) {
 [p x PWRTE  =  ON        ]
 "36
-[; ;Lab03_main_master.c: 36:        POT = 2;
+[; ;Lab03_main_master.c: 36:        POT2 = spiRead();
 [p x MCLRE  =  OFF       ]
 "39
-[; ;Lab03_main_master.c: 39:        POT1 = spiRead();
+[; ;Lab03_main_master.c: 39:        else if (POT == 2) {
 [p x CP  =  OFF          ]
 "41
-[; ;Lab03_main_master.c: 41:        }
+[; ;Lab03_main_master.c: 41:        POT = 1;
 [p x CPD  =  OFF         ]
 "43
-[; ;Lab03_main_master.c: 43:        PORTCbits.RC2 = 1;
+[; ;Lab03_main_master.c: 43:        _delay((unsigned long)((1)*(8000000/4000.0)));
 [p x BOREN  =  OFF       ]
 "44
-[; ;Lab03_main_master.c: 44:        _delay((unsigned long)((250)*(8000000/4000.0)));
+[; ;Lab03_main_master.c: 44:        PORTCbits.RC2 = 1;
 [p x IESO  =  OFF        ]
 "46
-[; ;Lab03_main_master.c: 46:     if(cont > 15){
+[; ;Lab03_main_master.c: 46: 
 [p x FCMEN  =  OFF       ]
 "48
-[; ;Lab03_main_master.c: 48:          TXIE = 1;
+[; ;Lab03_main_master.c: 48:          cont = 0;
 [p x LVP  =  OFF          ]
 "52
-[; ;Lab03_main_master.c: 52:     display_unidad = POT1 / 51;
+[; ;Lab03_main_master.c: 52: 
 [p x BOR4V  =  BOR40V    ]
 "54
-[; ;Lab03_main_master.c: 54:     display_decimal_2 = ((POT1 * 100 / 51) - (display_unidad*100) - (display_decimal*10));
+[; ;Lab03_main_master.c: 54:     display_decimal = ((POT1 * 100 / 51) - (display_unidad*100))/10;
 [p x WRT  =  OFF         ]
 "60
-[; ;Lab03_main_master.c: 60:     return;
+[; ;Lab03_main_master.c: 60: 
 [v _POT `uc ~T0 @X0 1 e ]
 [i _POT
 -> -> 1 `i `uc
 ]
 "61
-[; ;Lab03_main_master.c: 61: }
+[; ;Lab03_main_master.c: 61: 
 [v _POT1 `uc ~T0 @X0 1 e ]
 "62
-[; ;Lab03_main_master.c: 62: 
+[; ;Lab03_main_master.c: 62:     if (PORTDbits.RD1 == 1){
 [v _POT2 `uc ~T0 @X0 1 e ]
 "63
-[; ;Lab03_main_master.c: 63: 
+[; ;Lab03_main_master.c: 63:         cont_temp = 0;
 [v _var_temp `uc ~T0 @X0 1 e ]
 "65
-[; ;Lab03_main_master.c: 65: 
+[; ;Lab03_main_master.c: 65:         PORTD = 0;
 [v _contador `uc ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `uc
 ]
 "66
-[; ;Lab03_main_master.c: 66: void __attribute__((picinterrupt(("")))) isr(void){
+[; ;Lab03_main_master.c: 66:     }
+[v _cont_temp `uc ~T0 @X0 1 e ]
+[i _cont_temp
+-> -> 0 `i `uc
+]
+"67
+[; ;Lab03_main_master.c: 67:     }
 [v _cont `uc ~T0 @X0 1 e ]
-"68
-[; ;Lab03_main_master.c: 68:         cont++;
-[v _display_unidad `uc ~T0 @X0 1 e ]
 "69
-[; ;Lab03_main_master.c: 69:         INTCONbits.T0IF = 0;
-[v _display_decimal `uc ~T0 @X0 1 e ]
+[; ;Lab03_main_master.c: 69: }
+[v _display_unidad `uc ~T0 @X0 1 e ]
 "70
-[; ;Lab03_main_master.c: 70:     }
-[v _display_decimal_2 `uc ~T0 @X0 1 e ]
+[; ;Lab03_main_master.c: 70: 
+[v _display_decimal `uc ~T0 @X0 1 e ]
 "71
 [; ;Lab03_main_master.c: 71: 
-[v _display_unidad_s2 `uc ~T0 @X0 1 e ]
+[v _display_decimal_2 `uc ~T0 @X0 1 e ]
 "72
-[; ;Lab03_main_master.c: 72:     if(PIR1bits.RCIF == 1){
-[v _display_decimal_s2 `uc ~T0 @X0 1 e ]
+[; ;Lab03_main_master.c: 72: 
+[v _display_unidad_s2 `uc ~T0 @X0 1 e ]
 "73
 [; ;Lab03_main_master.c: 73: 
-[v _display_decimal_2_s2 `uc ~T0 @X0 1 e ]
+[v _display_decimal_s2 `uc ~T0 @X0 1 e ]
 "74
-[; ;Lab03_main_master.c: 74:         RA7 = 1;
+[; ;Lab03_main_master.c: 74: void __attribute__((picinterrupt(("")))) isr(void){
+[v _display_decimal_2_s2 `uc ~T0 @X0 1 e ]
+"75
+[; ;Lab03_main_master.c: 75:     if (INTCONbits.T0IF){
 [v _flag `c ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"83
-[; ;Lab03_main_master.c: 83:             else if (var_temp == 0x2D){
+"84
+[; ;Lab03_main_master.c: 84:         }
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"84
-[; ;Lab03_main_master.c: 84:                 contador--;
-[e ( _setup ..  ]
 "85
-[; ;Lab03_main_master.c: 85:                 if (contador > 255){
+[; ;Lab03_main_master.c: 85:         if (RCREG != 0x0D){
+[e ( _setup ..  ]
+"86
+[; ;Lab03_main_master.c: 86:         var_temp = RCREG;
 [e :U 140 ]
 {
-"86
-[; ;Lab03_main_master.c: 86:                     contador = 0;
-[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
 "87
-[; ;Lab03_main_master.c: 87:                 }
+[; ;Lab03_main_master.c: 87:             if(var_temp==48){
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"88
+[; ;Lab03_main_master.c: 88:                 cont_temp = 0;
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"89
-[; ;Lab03_main_master.c: 89:         }
-[e ( _spiWrite (1 -> _POT `uc ]
 "90
-[; ;Lab03_main_master.c: 90:         else {
+[; ;Lab03_main_master.c: 90:                 cont_temp = 1;
+[e ( _spiWrite (1 -> _POT `uc ]
+"91
+[; ;Lab03_main_master.c: 91:             }else if(var_temp==50){
 [e $ ! == -> _POT `i -> 1 `i 142  ]
 {
-"91
-[; ;Lab03_main_master.c: 91:         var_temp = RCREG;
-[e = _POT2 -> ( _spiRead ..  `uc ]
 "92
-[; ;Lab03_main_master.c: 92:         }
-[e = _POT -> -> 2 `i `uc ]
+[; ;Lab03_main_master.c: 92:                 cont_temp = 2;
+[e = _POT2 -> ( _spiRead ..  `uc ]
 "93
-[; ;Lab03_main_master.c: 93:     }
+[; ;Lab03_main_master.c: 93:             }else if(var_temp==51){
+[e = _POT -> -> 2 `i `uc ]
+"94
+[; ;Lab03_main_master.c: 94:                 cont_temp = 3;
 }
 [e $U 143  ]
-"94
-[; ;Lab03_main_master.c: 94: 
+"95
+[; ;Lab03_main_master.c: 95:             }else if(var_temp==52){
 [e :U 142 ]
 [e $ ! == -> _POT `i -> 2 `i 144  ]
 {
-"95
-[; ;Lab03_main_master.c: 95:     if (TXIF == 1){
-[e = _POT1 -> ( _spiRead ..  `uc ]
 "96
-[; ;Lab03_main_master.c: 96:         if (flag == 0){
-[e = _POT -> -> 1 `i `uc ]
+[; ;Lab03_main_master.c: 96:                 cont_temp = 4;
+[e = _POT1 -> ( _spiRead ..  `uc ]
 "97
-[; ;Lab03_main_master.c: 97:             TXREG = display_unidad + 48;
+[; ;Lab03_main_master.c: 97:             }else if(var_temp==53){
+[e = _POT -> -> 1 `i `uc ]
+"98
+[; ;Lab03_main_master.c: 98:                 cont_temp = 5;
 }
 [e :U 144 ]
 [e :U 143 ]
-"98
-[; ;Lab03_main_master.c: 98:             flag = 1;
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "99
-[; ;Lab03_main_master.c: 99:         } else if (flag == 1){
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;Lab03_main_master.c: 99:             }else if(var_temp==54){
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "100
-[; ;Lab03_main_master.c: 100:             TXREG = 0x2E;
+[; ;Lab03_main_master.c: 100:                 cont_temp = 6;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"101
+[; ;Lab03_main_master.c: 101:             }else if(var_temp==55){
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"102
-[; ;Lab03_main_master.c: 102:         } else if (flag == 2){
+"103
+[; ;Lab03_main_master.c: 103:             }else if(var_temp==56){
 [e $ ! > -> _cont `i -> 15 `i 145  ]
 {
-"103
-[; ;Lab03_main_master.c: 103:             TXREG = display_decimal + 48;
-[e = _cont -> -> 0 `i `uc ]
 "104
-[; ;Lab03_main_master.c: 104:             flag = 3;
-[e = _TXIE -> -> 1 `i `b ]
+[; ;Lab03_main_master.c: 104:                 cont_temp = 8;
+[e = _cont -> -> 0 `i `uc ]
 "105
-[; ;Lab03_main_master.c: 105:         } else if (flag == 3){
+[; ;Lab03_main_master.c: 105:             }else if(var_temp==57){
+[e = _TXIE -> -> 1 `i `b ]
+"106
+[; ;Lab03_main_master.c: 106:                 cont_temp = 9;
 }
 [e :U 145 ]
-"108
-[; ;Lab03_main_master.c: 108:         } else if (flag == 4){
-[e = _display_unidad -> / -> _POT1 `i -> 51 `i `uc ]
 "109
-[; ;Lab03_main_master.c: 109:             TXREG = 0x2D;
-[e = _display_decimal -> / - / * -> _POT1 `i -> 100 `i -> 51 `i * -> _display_unidad `i -> 100 `i -> 10 `i `uc ]
+[; ;Lab03_main_master.c: 109:         }}
+[e = _display_unidad -> / -> _POT1 `i -> 51 `i `uc ]
 "110
-[; ;Lab03_main_master.c: 110:             flag = 5;
+[; ;Lab03_main_master.c: 110: 
+[e = _display_decimal -> / - / * -> _POT1 `i -> 100 `i -> 51 `i * -> _display_unidad `i -> 100 `i -> 10 `i `uc ]
+"111
+[; ;Lab03_main_master.c: 111:     if (TXIF == 1){
 [e = _display_decimal_2 -> - - / * -> _POT1 `i -> 100 `i -> 51 `i * -> _display_unidad `i -> 100 `i * -> _display_decimal `i -> 10 `i `uc ]
-"112
-[; ;Lab03_main_master.c: 112:         else if (flag == 5){
-[e = _display_unidad_s2 -> / -> _POT2 `i -> 51 `i `uc ]
 "113
-[; ;Lab03_main_master.c: 113:             TXREG = display_unidad_s2 + 48;
-[e = _display_decimal_s2 -> / - / * -> _POT2 `i -> 100 `i -> 51 `i * -> _display_unidad_s2 `i -> 100 `i -> 10 `i `uc ]
+[; ;Lab03_main_master.c: 113:             TXREG = display_unidad + 48;
+[e = _display_unidad_s2 -> / -> _POT2 `i -> 51 `i `uc ]
 "114
-[; ;Lab03_main_master.c: 114:             flag = 6;
-[e = _display_decimal_2_s2 -> - - / * -> _POT2 `i -> 100 `i -> 51 `i * -> _display_unidad_s2 `i -> 100 `i * -> _display_decimal_s2 `i -> 10 `i `uc ]
+[; ;Lab03_main_master.c: 114:             flag = 1;
+[e = _display_decimal_s2 -> / - / * -> _POT2 `i -> 100 `i -> 51 `i * -> _display_unidad_s2 `i -> 100 `i -> 10 `i `uc ]
 "115
-[; ;Lab03_main_master.c: 115:         } else if (flag == 6){
+[; ;Lab03_main_master.c: 115:         } else if (flag == 1){
+[e = _display_decimal_2_s2 -> - - / * -> _POT2 `i -> 100 `i -> 51 `i * -> _display_unidad_s2 `i -> 100 `i * -> _display_decimal_s2 `i -> 10 `i `uc ]
+"118
+[; ;Lab03_main_master.c: 118:         } else if (flag == 2){
+[e $ ! == -> . . _PORTDbits 0 1 `i -> 1 `i 146  ]
+{
+"119
+[; ;Lab03_main_master.c: 119:             TXREG = display_decimal + 48;
+[e = _cont_temp -> -> 0 `i `uc ]
+"120
+[; ;Lab03_main_master.c: 120:             flag = 3;
+[e = _contador -> -> 0 `i `uc ]
+"121
+[; ;Lab03_main_master.c: 121:         } else if (flag == 3){
+[e = _PORTD -> -> 0 `i `uc ]
+"122
+[; ;Lab03_main_master.c: 122:             TXREG = display_decimal_2 + 48;
+}
+[e :U 146 ]
+"123
+[; ;Lab03_main_master.c: 123:             flag = 4;
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"116
-[; ;Lab03_main_master.c: 116:             TXREG = 0x2E;
+"124
+[; ;Lab03_main_master.c: 124:         } else if (flag == 4){
 [e $UE 138  ]
-"117
-[; ;Lab03_main_master.c: 117:             flag = 7;
+"125
+[; ;Lab03_main_master.c: 125:             TXREG = 0x2D;
 [e :UE 138 ]
 }
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"122
-[; ;Lab03_main_master.c: 122:             TXREG = display_decimal_2_s2 + 48;
+"130
+[; ;Lab03_main_master.c: 130:             flag = 6;
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"123
-[; ;Lab03_main_master.c: 123:             flag = 9;
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 147  ]
-{
-"124
-[; ;Lab03_main_master.c: 124:         } else if (flag == 9){
-[e ++ _cont -> -> 1 `i `uc ]
-"125
-[; ;Lab03_main_master.c: 125:             TXREG = 0x0D;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"126
-[; ;Lab03_main_master.c: 126:             flag = 0;
-}
-[e :U 147 ]
-"128
-[; ;Lab03_main_master.c: 128:     TXIF = 0;
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 148  ]
-{
-"130
-[; ;Lab03_main_master.c: 130: }
-[e = _RA7 -> -> 1 `i `b ]
 "131
-[; ;Lab03_main_master.c: 131: 
-[e $ ! == -> _RCREG `i -> 13 `i 149  ]
+[; ;Lab03_main_master.c: 131:         } else if (flag == 6){
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 148  ]
 {
 "132
-[; ;Lab03_main_master.c: 132: 
-[e = _RA7 -> -> 0 `i `b ]
+[; ;Lab03_main_master.c: 132:             TXREG = 0x2E;
+[e ++ _cont -> -> 1 `i `uc ]
 "133
-[; ;Lab03_main_master.c: 133: 
-[e $ ! == -> _var_temp `i -> 43 `i 150  ]
-{
+[; ;Lab03_main_master.c: 133:             flag = 7;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "134
-[; ;Lab03_main_master.c: 134: void setup(void){
-[e ++ _contador -> -> 1 `i `uc ]
-"135
-[; ;Lab03_main_master.c: 135: 
-[e $ ! > -> _contador `i -> 255 `i 151  ]
-{
+[; ;Lab03_main_master.c: 134:         } else if (flag == 7){
+}
+[e :U 148 ]
 "136
-[; ;Lab03_main_master.c: 136:     OSCCONbits.IRCF2 = 1;
-[e = _contador -> -> 0 `i `uc ]
+[; ;Lab03_main_master.c: 136:             flag = 8;
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 149  ]
+{
 "137
-[; ;Lab03_main_master.c: 137:     OSCCONbits.IRCF1 = 1;
+[; ;Lab03_main_master.c: 137:         } else if (flag == 8){
+[e $ ! == -> _RCREG `i -> 13 `i 150  ]
+{
+"138
+[; ;Lab03_main_master.c: 138:             TXREG = display_decimal_2_s2 + 48;
+[e = _PORTB _contador ]
+"139
+[; ;Lab03_main_master.c: 139:             flag = 9;
+[e = _PORTD -> -> 2 `i `uc ]
+"140
+[; ;Lab03_main_master.c: 140:         } else if (flag == 9){
+}
+[e :U 150 ]
+"141
+[; ;Lab03_main_master.c: 141:             TXREG = 0x0D;
+[e $ ! != -> _RCREG `i -> 13 `i 151  ]
+{
+"142
+[; ;Lab03_main_master.c: 142:             flag = 0;
+[e = _var_temp _RCREG ]
+"143
+[; ;Lab03_main_master.c: 143:         }
+[e $ ! == -> _var_temp `i -> 48 `i 152  ]
+{
+"144
+[; ;Lab03_main_master.c: 144:     TXIF = 0;
+[e = _cont_temp -> -> 0 `i `uc ]
+"145
+[; ;Lab03_main_master.c: 145:     }
+}
+[e $U 153  ]
+[e :U 152 ]
+[e $ ! == -> _var_temp `i -> 49 `i 154  ]
+{
+"146
+[; ;Lab03_main_master.c: 146: }
+[e = _cont_temp -> -> 1 `i `uc ]
+"147
+[; ;Lab03_main_master.c: 147: 
+}
+[e $U 155  ]
+[e :U 154 ]
+[e $ ! == -> _var_temp `i -> 50 `i 156  ]
+{
+"148
+[; ;Lab03_main_master.c: 148: uint8_t ascii_to_dec(uint8_t val){
+[e = _cont_temp -> -> 2 `i `uc ]
+"149
+[; ;Lab03_main_master.c: 149:     if(val==48){
+}
+[e $U 157  ]
+[e :U 156 ]
+[e $ ! == -> _var_temp `i -> 51 `i 158  ]
+{
+"150
+[; ;Lab03_main_master.c: 150:         return 0;
+[e = _cont_temp -> -> 3 `i `uc ]
+"151
+[; ;Lab03_main_master.c: 151:     }else if(val==49){
+}
+[e $U 159  ]
+[e :U 158 ]
+[e $ ! == -> _var_temp `i -> 52 `i 160  ]
+{
+"152
+[; ;Lab03_main_master.c: 152:         return 1;
+[e = _cont_temp -> -> 4 `i `uc ]
+"153
+[; ;Lab03_main_master.c: 153:     }else if(val==50){
+}
+[e $U 161  ]
+[e :U 160 ]
+[e $ ! == -> _var_temp `i -> 53 `i 162  ]
+{
+"154
+[; ;Lab03_main_master.c: 154:         return 2;
+[e = _cont_temp -> -> 5 `i `uc ]
+"155
+[; ;Lab03_main_master.c: 155:     }else if(val==51){
+}
+[e $U 163  ]
+[e :U 162 ]
+[e $ ! == -> _var_temp `i -> 54 `i 164  ]
+{
+"156
+[; ;Lab03_main_master.c: 156:         return 3;
+[e = _cont_temp -> -> 6 `i `uc ]
+"157
+[; ;Lab03_main_master.c: 157:     }else if(val==52){
+}
+[e $U 165  ]
+[e :U 164 ]
+[e $ ! == -> _var_temp `i -> 55 `i 166  ]
+{
+"158
+[; ;Lab03_main_master.c: 158:         return 4;
+[e = _cont_temp -> -> 7 `i `uc ]
+"159
+[; ;Lab03_main_master.c: 159:     }else if(val==53){
+}
+[e $U 167  ]
+[e :U 166 ]
+[e $ ! == -> _var_temp `i -> 56 `i 168  ]
+{
+"160
+[; ;Lab03_main_master.c: 160:         return 5;
+[e = _cont_temp -> -> 8 `i `uc ]
+"161
+[; ;Lab03_main_master.c: 161:     }else if(val==54){
+}
+[e $U 169  ]
+[e :U 168 ]
+[e $ ! == -> _var_temp `i -> 57 `i 170  ]
+{
+"162
+[; ;Lab03_main_master.c: 162:         return 6;
+[e = _cont_temp -> -> 9 `i `uc ]
+"163
+[; ;Lab03_main_master.c: 163:     }else if(val==55){
+}
+[e :U 170 ]
+[e :U 169 ]
+[e :U 167 ]
+[e :U 165 ]
+[e :U 163 ]
+[e :U 161 ]
+[e :U 159 ]
+[e :U 157 ]
+[e :U 155 ]
+[e :U 153 ]
+"164
+[; ;Lab03_main_master.c: 164:         return 7;
+[e = _contador -> + -> _contador `i -> _cont_temp `i `uc ]
+"165
+[; ;Lab03_main_master.c: 165:     }else if(val==56){
 }
 [e :U 151 ]
 }
-[e $U 152  ]
-"139
-[; ;Lab03_main_master.c: 139:     OSCCONbits.SCS = 1;
-[e :U 150 ]
-[e $ ! == -> _var_temp `i -> 45 `i 153  ]
-{
-"140
-[; ;Lab03_main_master.c: 140: 
-[e -- _contador -> -> 1 `i `uc ]
-"141
-[; ;Lab03_main_master.c: 141: 
-[e $ ! > -> _contador `i -> 255 `i 154  ]
-{
-"142
-[; ;Lab03_main_master.c: 142:     ANSELH = 0x00;
-[e = _contador -> -> 0 `i `uc ]
-"143
-[; ;Lab03_main_master.c: 143:     ANSEL = 0x00;
-}
-[e :U 154 ]
-"144
-[; ;Lab03_main_master.c: 144: 
-}
-[e :U 153 ]
-[e :U 152 ]
-"145
-[; ;Lab03_main_master.c: 145:     TRISA = 0x00;
-}
-[e $U 155  ]
-"146
-[; ;Lab03_main_master.c: 146:     TRISC = 0x90;
 [e :U 149 ]
-{
-"147
-[; ;Lab03_main_master.c: 147:     TRISD = 0x00;
-[e = _var_temp _RCREG ]
-"148
-[; ;Lab03_main_master.c: 148:     TRISE = 0x00;
-}
-[e :U 155 ]
-"149
-[; ;Lab03_main_master.c: 149: 
-}
-[e :U 148 ]
-"151
-[; ;Lab03_main_master.c: 151:     PORTC = 0x00;
-[e $ ! == -> _TXIF `i -> 1 `i 156  ]
-{
-"152
-[; ;Lab03_main_master.c: 152:     PORTD = 0x00;
-[e $ ! == -> _flag `i -> 0 `i 157  ]
-{
-"153
-[; ;Lab03_main_master.c: 153:     PORTE = 0x00;
-[e = _TXREG -> + -> _display_unidad `i -> 48 `i `uc ]
-"154
-[; ;Lab03_main_master.c: 154: 
-[e = _flag -> -> 1 `i `c ]
-"155
-[; ;Lab03_main_master.c: 155: 
-}
-[e $U 158  ]
-[e :U 157 ]
-[e $ ! == -> _flag `i -> 1 `i 159  ]
-{
-"156
-[; ;Lab03_main_master.c: 156:     INTCONbits.GIE = 1;
-[e = _TXREG -> -> 46 `i `uc ]
-"157
-[; ;Lab03_main_master.c: 157:     INTCONbits.T0IE = 1;
-[e = _flag -> -> 2 `i `c ]
-"158
-[; ;Lab03_main_master.c: 158:     INTCONbits.T0IF = 0;
-}
-[e $U 160  ]
-[e :U 159 ]
-[e $ ! == -> _flag `i -> 2 `i 161  ]
-{
-"159
-[; ;Lab03_main_master.c: 159: 
-[e = _TXREG -> + -> _display_decimal `i -> 48 `i `uc ]
-"160
-[; ;Lab03_main_master.c: 160: 
-[e = _flag -> -> 3 `i `c ]
-"161
-[; ;Lab03_main_master.c: 161:     TXSTAbits.SYNC = 0;
-}
-[e $U 162  ]
-[e :U 161 ]
-[e $ ! == -> _flag `i -> 3 `i 163  ]
-{
-"162
-[; ;Lab03_main_master.c: 162:     TXSTAbits.BRGH = 1;
-[e = _TXREG -> + -> _display_decimal_2 `i -> 48 `i `uc ]
-"163
-[; ;Lab03_main_master.c: 163: 
-[e = _flag -> -> 4 `i `c ]
-"164
-[; ;Lab03_main_master.c: 164:     BAUDCTLbits.BRG16 = 1;
-}
-[e $U 164  ]
-[e :U 163 ]
-[e $ ! == -> _flag `i -> 4 `i 165  ]
-{
-"165
-[; ;Lab03_main_master.c: 165: 
-[e = _TXREG -> -> 45 `i `uc ]
-"166
-[; ;Lab03_main_master.c: 166:     SPBRG = 207;
-[e = _flag -> -> 5 `i `c ]
 "167
-[; ;Lab03_main_master.c: 167:     SPBRGH = 0;
-}
-[e $U 166  ]
+[; ;Lab03_main_master.c: 167:     }else if(val==57){
+[e $ ! == -> _TXIF `i -> 1 `i 171  ]
+{
 "168
-[; ;Lab03_main_master.c: 168: 
-[e :U 165 ]
-[e $ ! == -> _flag `i -> 5 `i 167  ]
+[; ;Lab03_main_master.c: 168:         return 9;
+[e $ ! == -> _flag `i -> 0 `i 172  ]
 {
 "169
-[; ;Lab03_main_master.c: 169:     RCSTAbits.SPEN = 1;
-[e = _TXREG -> + -> _display_unidad_s2 `i -> 48 `i `uc ]
+[; ;Lab03_main_master.c: 169:     }
+[e = _TXREG -> + -> _display_unidad `i -> 48 `i `uc ]
 "170
-[; ;Lab03_main_master.c: 170:     RCSTAbits.RX9 = 0;
-[e = _flag -> -> 6 `i `c ]
+[; ;Lab03_main_master.c: 170: 
+[e = _flag -> -> 1 `i `c ]
 "171
-[; ;Lab03_main_master.c: 171:     RCSTAbits.CREN = 1;
+[; ;Lab03_main_master.c: 171: }
 }
-[e $U 168  ]
-[e :U 167 ]
-[e $ ! == -> _flag `i -> 6 `i 169  ]
+[e $U 173  ]
+[e :U 172 ]
+[e $ ! == -> _flag `i -> 1 `i 174  ]
 {
 "172
 [; ;Lab03_main_master.c: 172: 
 [e = _TXREG -> -> 46 `i `uc ]
 "173
-[; ;Lab03_main_master.c: 173:     TXSTAbits.TXEN = 1;
-[e = _flag -> -> 7 `i `c ]
+[; ;Lab03_main_master.c: 173: 
+[e = _flag -> -> 2 `i `c ]
 "174
 [; ;Lab03_main_master.c: 174: 
 }
-[e $U 170  ]
-[e :U 169 ]
-[e $ ! == -> _flag `i -> 7 `i 171  ]
+[e $U 175  ]
+[e :U 174 ]
+[e $ ! == -> _flag `i -> 2 `i 176  ]
 {
 "175
-[; ;Lab03_main_master.c: 175: 
-[e = _TXREG -> + -> _display_decimal_s2 `i -> 48 `i `uc ]
+[; ;Lab03_main_master.c: 175: void setup(void){
+[e = _TXREG -> + -> _display_decimal `i -> 48 `i `uc ]
 "176
-[; ;Lab03_main_master.c: 176:     OPTION_REGbits.T0CS = 0;
-[e = _flag -> -> 8 `i `c ]
+[; ;Lab03_main_master.c: 176: 
+[e = _flag -> -> 3 `i `c ]
 "177
-[; ;Lab03_main_master.c: 177:     OPTION_REGbits.PSA = 0;
+[; ;Lab03_main_master.c: 177:     OSCCONbits.IRCF2 = 1;
 }
-[e $U 172  ]
-[e :U 171 ]
-[e $ ! == -> _flag `i -> 8 `i 173  ]
+[e $U 177  ]
+[e :U 176 ]
+[e $ ! == -> _flag `i -> 3 `i 178  ]
 {
 "178
-[; ;Lab03_main_master.c: 178:     OPTION_REGbits.PS2 = 1;
-[e = _TXREG -> + -> _display_decimal_2_s2 `i -> 48 `i `uc ]
+[; ;Lab03_main_master.c: 178:     OSCCONbits.IRCF1 = 1;
+[e = _TXREG -> + -> _display_decimal_2 `i -> 48 `i `uc ]
 "179
-[; ;Lab03_main_master.c: 179:     OPTION_REGbits.PS1 = 1;
-[e = _flag -> -> 9 `i `c ]
+[; ;Lab03_main_master.c: 179:     OSCCONbits.IRCF0 = 1;
+[e = _flag -> -> 4 `i `c ]
 "180
-[; ;Lab03_main_master.c: 180:     OPTION_REGbits.PS0 = 1;
+[; ;Lab03_main_master.c: 180:     OSCCONbits.SCS = 1;
 }
-[e $U 174  ]
-[e :U 173 ]
-[e $ ! == -> _flag `i -> 9 `i 175  ]
+[e $U 179  ]
+[e :U 178 ]
+[e $ ! == -> _flag `i -> 4 `i 180  ]
 {
 "181
-[; ;Lab03_main_master.c: 181:     TMR0 = 10;
-[e = _TXREG -> -> 13 `i `uc ]
+[; ;Lab03_main_master.c: 181: 
+[e = _TXREG -> -> 45 `i `uc ]
 "182
 [; ;Lab03_main_master.c: 182: 
-[e = _flag -> -> 0 `i `c ]
+[e = _flag -> -> 5 `i `c ]
 "183
-[; ;Lab03_main_master.c: 183:     TRISC2 = 0;
+[; ;Lab03_main_master.c: 183:     ANSELH = 0x00;
 }
-[e :U 175 ]
-[e :U 174 ]
-[e :U 172 ]
-[e :U 170 ]
-[e :U 168 ]
-[e :U 166 ]
-[e :U 164 ]
-[e :U 162 ]
-[e :U 160 ]
-[e :U 158 ]
+[e $U 181  ]
 "184
-[; ;Lab03_main_master.c: 184:     PORTCbits.RC2 = 1;
-[e = _TXIF -> -> 0 `i `b ]
+[; ;Lab03_main_master.c: 184:     ANSEL = 0x00;
+[e :U 180 ]
+[e $ ! == -> _flag `i -> 5 `i 182  ]
+{
 "185
-[; ;Lab03_main_master.c: 185:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-}
-[e :U 156 ]
+[; ;Lab03_main_master.c: 185: 
+[e = _TXREG -> + -> _display_unidad_s2 `i -> 48 `i `uc ]
 "186
-[; ;Lab03_main_master.c: 186: 
-[e :UE 146 ]
+[; ;Lab03_main_master.c: 186:     TRISA = 0x00;
+[e = _flag -> -> 6 `i `c ]
+"187
+[; ;Lab03_main_master.c: 187:     TRISB = 0x00;
 }
+[e $U 183  ]
+[e :U 182 ]
+[e $ ! == -> _flag `i -> 6 `i 184  ]
+{
+"188
+[; ;Lab03_main_master.c: 188:     TRISC = 0x90;
+[e = _TXREG -> -> 46 `i `uc ]
+"189
+[; ;Lab03_main_master.c: 189:     TRISD = 0x00;
+[e = _flag -> -> 7 `i `c ]
 "190
+[; ;Lab03_main_master.c: 190:     TRISE = 0x00;
+}
+[e $U 185  ]
+[e :U 184 ]
+[e $ ! == -> _flag `i -> 7 `i 186  ]
+{
+"191
+[; ;Lab03_main_master.c: 191: 
+[e = _TXREG -> + -> _display_decimal_s2 `i -> 48 `i `uc ]
+"192
+[; ;Lab03_main_master.c: 192:     PORTA = 0x00;
+[e = _flag -> -> 8 `i `c ]
+"193
+[; ;Lab03_main_master.c: 193:     PORTB = 0x00;
+}
+[e $U 187  ]
+[e :U 186 ]
+[e $ ! == -> _flag `i -> 8 `i 188  ]
+{
+"194
+[; ;Lab03_main_master.c: 194:     PORTC = 0x00;
+[e = _TXREG -> + -> _display_decimal_2_s2 `i -> 48 `i `uc ]
+"195
+[; ;Lab03_main_master.c: 195:     PORTD = 0x00;
+[e = _flag -> -> 9 `i `c ]
+"196
+[; ;Lab03_main_master.c: 196:     PORTE = 0x00;
+}
+[e $U 189  ]
+[e :U 188 ]
+[e $ ! == -> _flag `i -> 9 `i 190  ]
+{
+"197
+[; ;Lab03_main_master.c: 197: 
+[e = _TXREG -> -> 13 `i `uc ]
+"198
+[; ;Lab03_main_master.c: 198: 
+[e = _flag -> -> 0 `i `c ]
+"199
+[; ;Lab03_main_master.c: 199:     INTCONbits.GIE = 1;
+}
+[e :U 190 ]
+[e :U 189 ]
+[e :U 187 ]
+[e :U 185 ]
+[e :U 183 ]
+[e :U 181 ]
+[e :U 179 ]
+[e :U 177 ]
+[e :U 175 ]
+[e :U 173 ]
+"200
+[; ;Lab03_main_master.c: 200:     INTCONbits.T0IE = 1;
+[e = _TXIF -> -> 0 `i `b ]
+"201
+[; ;Lab03_main_master.c: 201:     INTCONbits.T0IF = 0;
+}
+[e :U 171 ]
+"202
+[; ;Lab03_main_master.c: 202: 
+[e :UE 147 ]
+}
+"204
+[; ;Lab03_main_master.c: 204:     TXSTAbits.SYNC = 0;
+[v _ascii_to_dec `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _ascii_to_dec ]
+[v _val `uc ~T0 @X0 1 r1 ]
+[f ]
+"205
+[; ;Lab03_main_master.c: 205:     TXSTAbits.BRGH = 1;
+[e $ ! == -> _val `i -> 48 `i 192  ]
+{
+"206
+[; ;Lab03_main_master.c: 206: 
+[e ) -> -> 0 `i `uc ]
+[e $UE 191  ]
+"207
+[; ;Lab03_main_master.c: 207:     BAUDCTLbits.BRG16 = 1;
+}
+[e $U 193  ]
+[e :U 192 ]
+[e $ ! == -> _val `i -> 49 `i 194  ]
+{
+"208
+[; ;Lab03_main_master.c: 208: 
+[e ) -> -> 1 `i `uc ]
+[e $UE 191  ]
+"209
+[; ;Lab03_main_master.c: 209:     SPBRG = 207;
+}
+[e $U 195  ]
+[e :U 194 ]
+[e $ ! == -> _val `i -> 50 `i 196  ]
+{
+"210
+[; ;Lab03_main_master.c: 210:     SPBRGH = 0;
+[e ) -> -> 2 `i `uc ]
+[e $UE 191  ]
+"211
+[; ;Lab03_main_master.c: 211: 
+}
+[e $U 197  ]
+[e :U 196 ]
+[e $ ! == -> _val `i -> 51 `i 198  ]
+{
+"212
+[; ;Lab03_main_master.c: 212:     RCSTAbits.SPEN = 1;
+[e ) -> -> 3 `i `uc ]
+[e $UE 191  ]
+"213
+[; ;Lab03_main_master.c: 213:     RCSTAbits.RX9 = 0;
+}
+[e $U 199  ]
+[e :U 198 ]
+[e $ ! == -> _val `i -> 52 `i 200  ]
+{
+"214
+[; ;Lab03_main_master.c: 214:     RCSTAbits.CREN = 1;
+[e ) -> -> 4 `i `uc ]
+[e $UE 191  ]
+"215
+[; ;Lab03_main_master.c: 215: 
+}
+[e $U 201  ]
+[e :U 200 ]
+[e $ ! == -> _val `i -> 53 `i 202  ]
+{
+"216
+[; ;Lab03_main_master.c: 216:     TXSTAbits.TXEN = 1;
+[e ) -> -> 5 `i `uc ]
+[e $UE 191  ]
+"217
+[; ;Lab03_main_master.c: 217: 
+}
+[e $U 203  ]
+[e :U 202 ]
+[e $ ! == -> _val `i -> 54 `i 204  ]
+{
+"218
+[; ;Lab03_main_master.c: 218: 
+[e ) -> -> 6 `i `uc ]
+[e $UE 191  ]
+"219
+[; ;Lab03_main_master.c: 219:     OPTION_REGbits.T0CS = 0;
+}
+[e $U 205  ]
+[e :U 204 ]
+[e $ ! == -> _val `i -> 55 `i 206  ]
+{
+"220
+[; ;Lab03_main_master.c: 220:     OPTION_REGbits.PSA = 0;
+[e ) -> -> 7 `i `uc ]
+[e $UE 191  ]
+"221
+[; ;Lab03_main_master.c: 221:     OPTION_REGbits.PS2 = 1;
+}
+[e $U 207  ]
+[e :U 206 ]
+[e $ ! == -> _val `i -> 56 `i 208  ]
+{
+"222
+[; ;Lab03_main_master.c: 222:     OPTION_REGbits.PS1 = 1;
+[e ) -> -> 8 `i `uc ]
+[e $UE 191  ]
+"223
+[; ;Lab03_main_master.c: 223:     OPTION_REGbits.PS0 = 1;
+}
+[e $U 209  ]
+[e :U 208 ]
+[e $ ! == -> _val `i -> 57 `i 210  ]
+{
+"224
+[; ;Lab03_main_master.c: 224:     TMR0 = 10;
+[e ) -> -> 9 `i `uc ]
+[e $UE 191  ]
+"225
+[; ;Lab03_main_master.c: 225: 
+}
+[e :U 210 ]
+[e :U 209 ]
+[e :U 207 ]
+[e :U 205 ]
+[e :U 203 ]
+[e :U 201 ]
+[e :U 199 ]
+[e :U 197 ]
+[e :U 195 ]
+[e :U 193 ]
+"227
+[; ;Lab03_main_master.c: 227:     PORTCbits.RC2 = 1;
+[e :UE 191 ]
+}
+"231
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"192
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"193
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"194
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"195
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"198
-[e = _ANSELH -> -> 0 `i `uc ]
-"199
-[e = _ANSEL -> -> 0 `i `uc ]
-"201
-[e = _TRISA -> -> 0 `i `uc ]
-"202
-[e = _TRISC -> -> 144 `i `uc ]
-"203
-[e = _TRISD -> -> 0 `i `uc ]
-"204
-[e = _TRISE -> -> 0 `i `uc ]
-"206
-[e = _PORTA -> -> 0 `i `uc ]
-"207
-[e = _PORTC -> -> 0 `i `uc ]
-"208
-[e = _PORTD -> -> 0 `i `uc ]
-"209
-[e = _PORTE -> -> 0 `i `uc ]
-"212
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"213
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"214
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"217
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"218
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"220
-[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
-"222
-[e = _SPBRG -> -> 207 `i `uc ]
-"223
-[e = _SPBRGH -> -> 0 `i `uc ]
-"225
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"226
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"227
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"229
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"232
-[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
 "233
-[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
 "234
-[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
 "235
-[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
 "236
-[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
-"237
-[e = _TMR0 -> -> 10 `i `uc ]
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
 "239
-[e = _TRISC2 -> -> 0 `i `b ]
+[e = _ANSELH -> -> 0 `i `uc ]
 "240
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"241
-[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
+[e = _ANSEL -> -> 0 `i `uc ]
+"242
+[e = _TRISA -> -> 0 `i `uc ]
 "243
-[e :UE 176 ]
+[e = _TRISB -> -> 0 `i `uc ]
+"244
+[e = _TRISC -> -> 144 `i `uc ]
+"245
+[e = _TRISD -> -> 0 `i `uc ]
+"246
+[e = _TRISE -> -> 0 `i `uc ]
+"248
+[e = _PORTA -> -> 0 `i `uc ]
+"249
+[e = _PORTB -> -> 0 `i `uc ]
+"250
+[e = _PORTC -> -> 0 `i `uc ]
+"251
+[e = _PORTD -> -> 0 `i `uc ]
+"252
+[e = _PORTE -> -> 0 `i `uc ]
+"255
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"256
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"257
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"260
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"261
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"263
+[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
+"265
+[e = _SPBRG -> -> 207 `i `uc ]
+"266
+[e = _SPBRGH -> -> 0 `i `uc ]
+"268
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"269
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"270
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"272
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"275
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+"276
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+"277
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"278
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"279
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"280
+[e = _TMR0 -> -> 10 `i `uc ]
+"282
+[e = _TRISC2 -> -> 0 `i `b ]
+"283
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"284
+[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
+"286
+[e :UE 211 ]
 }

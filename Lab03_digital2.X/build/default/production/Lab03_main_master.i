@@ -2705,7 +2705,8 @@ uint8_t POT1;
 uint8_t POT2;
 uint8_t var_temp;
 
-uint8_t contador = 0;
+uint8_t contador=0;
+uint8_t cont_temp=0;
 uint8_t cont;
 
 uint8_t display_unidad;
@@ -2719,7 +2720,7 @@ int8_t flag;
 
 
 void setup(void);
-
+uint8_t ascii_to_dec(uint8_t val);
 
 
 
@@ -2755,6 +2756,13 @@ void main(void) {
     display_unidad_s2 = POT2 / 51;
     display_decimal_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100))/10;
     display_decimal_2_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100) - (display_decimal_s2*10));
+
+
+    if (PORTDbits.RD1 == 1){
+        cont_temp = 0;
+        contador = 0;
+        PORTD = 0;
+    }
     }
     return;
 }
@@ -2769,27 +2777,35 @@ void __attribute__((picinterrupt(("")))) isr(void){
     }
 
     if(PIR1bits.RCIF == 1){
-
-        RA7 = 1;
         if (RCREG == 0x0D){
-        RA7 = 0;
-            if (var_temp == 0x2B){
-                contador++;
-                if (contador > 255){
-                    contador = 0;
-                } }
-
-            else if (var_temp == 0x2D){
-                contador--;
-                if (contador > 255){
-                    contador = 0;
-                }
-            }
+        PORTB = contador;
+        PORTD =2;
         }
-        else {
+        if (RCREG != 0x0D){
         var_temp = RCREG;
-        }
-    }
+            if(var_temp==48){
+                cont_temp = 0;
+            }else if(var_temp==49){
+                cont_temp = 1;
+            }else if(var_temp==50){
+                cont_temp = 2;
+            }else if(var_temp==51){
+                cont_temp = 3;
+            }else if(var_temp==52){
+                cont_temp = 4;
+            }else if(var_temp==53){
+                cont_temp = 5;
+            }else if(var_temp==54){
+                cont_temp = 6;
+            }else if(var_temp==55){
+                cont_temp = 7;
+            }else if(var_temp==56){
+                cont_temp = 8;
+            }else if(var_temp==57){
+                cont_temp = 9;
+            }
+        contador = contador + cont_temp;
+        }}
 
     if (TXIF == 1){
         if (flag == 0){
@@ -2828,6 +2844,31 @@ void __attribute__((picinterrupt(("")))) isr(void){
     }
 }
 
+uint8_t ascii_to_dec(uint8_t val){
+    if(val==48){
+        return 0;
+    }else if(val==49){
+        return 1;
+    }else if(val==50){
+        return 2;
+    }else if(val==51){
+        return 3;
+    }else if(val==52){
+        return 4;
+    }else if(val==53){
+        return 5;
+    }else if(val==54){
+        return 6;
+    }else if(val==55){
+        return 7;
+    }else if(val==56){
+        return 8;
+    }else if(val==57){
+        return 9;
+    }
+
+}
+
 
 
 void setup(void){
@@ -2842,11 +2883,13 @@ void setup(void){
     ANSEL = 0x00;
 
     TRISA = 0x00;
+    TRISB = 0x00;
     TRISC = 0x90;
     TRISD = 0x00;
     TRISE = 0x00;
 
     PORTA = 0x00;
+    PORTB = 0x00;
     PORTC = 0x00;
     PORTD = 0x00;
     PORTE = 0x00;
