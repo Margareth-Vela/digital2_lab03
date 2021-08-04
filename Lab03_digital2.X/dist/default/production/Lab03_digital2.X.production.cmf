@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\vema3\AppData\Local\Temp\sedg.o
+$C:\Users\vema3\AppData\Local\Temp\ssho.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -81,32 +81,32 @@ STRING 4A5-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab03_digital2.X.production.o
-F cinit CODE >692:C:\Users\vema3\AppData\Local\Temp\sedg.s
-F cinit CODE >695:C:\Users\vema3\AppData\Local\Temp\sedg.s
-F cinit CODE >772:C:\Users\vema3\AppData\Local\Temp\sedg.s
-14 cinit CODE >773:C:\Users\vema3\AppData\Local\Temp\sedg.s
-15 cinit CODE >774:C:\Users\vema3\AppData\Local\Temp\sedg.s
-1A cinit CODE >775:C:\Users\vema3\AppData\Local\Temp\sedg.s
-1B cinit CODE >779:C:\Users\vema3\AppData\Local\Temp\sedg.s
-1C cinit CODE >780:C:\Users\vema3\AppData\Local\Temp\sedg.s
-1D cinit CODE >781:C:\Users\vema3\AppData\Local\Temp\sedg.s
-1E cinit CODE >782:C:\Users\vema3\AppData\Local\Temp\sedg.s
-1F cinit CODE >783:C:\Users\vema3\AppData\Local\Temp\sedg.s
-20 cinit CODE >784:C:\Users\vema3\AppData\Local\Temp\sedg.s
-21 cinit CODE >785:C:\Users\vema3\AppData\Local\Temp\sedg.s
-22 cinit CODE >786:C:\Users\vema3\AppData\Local\Temp\sedg.s
-23 cinit CODE >787:C:\Users\vema3\AppData\Local\Temp\sedg.s
-24 cinit CODE >788:C:\Users\vema3\AppData\Local\Temp\sedg.s
-25 cinit CODE >789:C:\Users\vema3\AppData\Local\Temp\sedg.s
-26 cinit CODE >790:C:\Users\vema3\AppData\Local\Temp\sedg.s
-27 cinit CODE >791:C:\Users\vema3\AppData\Local\Temp\sedg.s
-28 cinit CODE >794:C:\Users\vema3\AppData\Local\Temp\sedg.s
-29 cinit CODE >795:C:\Users\vema3\AppData\Local\Temp\sedg.s
-2A cinit CODE >796:C:\Users\vema3\AppData\Local\Temp\sedg.s
-2B cinit CODE >797:C:\Users\vema3\AppData\Local\Temp\sedg.s
-2C cinit CODE >803:C:\Users\vema3\AppData\Local\Temp\sedg.s
-2C cinit CODE >805:C:\Users\vema3\AppData\Local\Temp\sedg.s
-2D cinit CODE >806:C:\Users\vema3\AppData\Local\Temp\sedg.s
+F cinit CODE >692:C:\Users\vema3\AppData\Local\Temp\ssho.s
+F cinit CODE >695:C:\Users\vema3\AppData\Local\Temp\ssho.s
+F cinit CODE >772:C:\Users\vema3\AppData\Local\Temp\ssho.s
+14 cinit CODE >773:C:\Users\vema3\AppData\Local\Temp\ssho.s
+15 cinit CODE >774:C:\Users\vema3\AppData\Local\Temp\ssho.s
+1A cinit CODE >775:C:\Users\vema3\AppData\Local\Temp\ssho.s
+1B cinit CODE >779:C:\Users\vema3\AppData\Local\Temp\ssho.s
+1C cinit CODE >780:C:\Users\vema3\AppData\Local\Temp\ssho.s
+1D cinit CODE >781:C:\Users\vema3\AppData\Local\Temp\ssho.s
+1E cinit CODE >782:C:\Users\vema3\AppData\Local\Temp\ssho.s
+1F cinit CODE >783:C:\Users\vema3\AppData\Local\Temp\ssho.s
+20 cinit CODE >784:C:\Users\vema3\AppData\Local\Temp\ssho.s
+21 cinit CODE >785:C:\Users\vema3\AppData\Local\Temp\ssho.s
+22 cinit CODE >786:C:\Users\vema3\AppData\Local\Temp\ssho.s
+23 cinit CODE >787:C:\Users\vema3\AppData\Local\Temp\ssho.s
+24 cinit CODE >788:C:\Users\vema3\AppData\Local\Temp\ssho.s
+25 cinit CODE >789:C:\Users\vema3\AppData\Local\Temp\ssho.s
+26 cinit CODE >790:C:\Users\vema3\AppData\Local\Temp\ssho.s
+27 cinit CODE >791:C:\Users\vema3\AppData\Local\Temp\ssho.s
+28 cinit CODE >794:C:\Users\vema3\AppData\Local\Temp\ssho.s
+29 cinit CODE >795:C:\Users\vema3\AppData\Local\Temp\ssho.s
+2A cinit CODE >796:C:\Users\vema3\AppData\Local\Temp\ssho.s
+2B cinit CODE >797:C:\Users\vema3\AppData\Local\Temp\ssho.s
+2C cinit CODE >803:C:\Users\vema3\AppData\Local\Temp\ssho.s
+2C cinit CODE >805:C:\Users\vema3\AppData\Local\Temp\ssho.s
+2D cinit CODE >806:C:\Users\vema3\AppData\Local\Temp\ssho.s
 4 intentry CODE >139:C:\Users\vema3\OneDrive\Documents\GitHub\digital2_lab03\Lab03_digital2.X\Lab03_main_master.c
 478 text10 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
 479 text10 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
@@ -361,12 +361,12 @@ _POT2 44 0 BANK0 1 bssBANK0 dist/default/production\Lab03_digital2.X.production.
 _TMR0 1 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 _TXIE 464 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 _TXIF 64 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\vema3\AppData\Local\Temp\sedg.o
+___sp 0 0 STACK 2 stack C:\Users\vema3\AppData\Local\Temp\ssho.o
 _cont 42 0 BANK0 1 bssBANK0 dist/default/production\Lab03_digital2.X.production.o
 _flag 7A 0 COMMON 1 bssCOMMON dist/default/production\Lab03_digital2.X.production.o
 _main 60 0 CODE 0 maintext dist/default/production\Lab03_digital2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
-start 18 0 CODE 0 init C:\Users\vema3\AppData\Local\Temp\sedg.o
+start 18 0 CODE 0 init C:\Users\vema3\AppData\Local\Temp\ssho.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -375,12 +375,12 @@ _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab03_digital2.X.production
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 i1___bmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab03_digital2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\sedg.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\sedg.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\sedg.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\sedg.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\sedg.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\sedg.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\ssho.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\ssho.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\ssho.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\ssho.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\ssho.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\vema3\AppData\Local\Temp\ssho.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 ___bmul@multiplicand 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab03_digital2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
@@ -402,8 +402,8 @@ ___bmul@multiplier 23 0 BANK0 1 cstackBANK0 dist/default/production\Lab03_digita
 ___awdiv@divisor 26 0 BANK0 1 cstackBANK0 dist/default/production\Lab03_digital2.X.production.o
 __end_of___awdiv 7A6 0 CODE 0 text8 dist/default/production\Lab03_digital2.X.production.o
 _display_decimal_2_s2 39 0 BANK0 1 bssBANK0 dist/default/production\Lab03_digital2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\vema3\AppData\Local\Temp\sedg.o
-___stacklo 0 0 ABS 0 - C:\Users\vema3\AppData\Local\Temp\sedg.o
+___stackhi 0 0 ABS 0 - C:\Users\vema3\AppData\Local\Temp\ssho.o
+___stacklo 0 0 ABS 0 - C:\Users\vema3\AppData\Local\Temp\ssho.o
 __size_ofi1___bmul 0 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
@@ -422,7 +422,7 @@ _TRISC5 43D 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 i1___bmul@product 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab03_digital2.X.production.o
 _display_unidad 3E 0 BANK0 1 bssBANK0 dist/default/production\Lab03_digital2.X.production.o
 _display_decimal_2 3C 0 BANK0 1 bssBANK0 dist/default/production\Lab03_digital2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\vema3\AppData\Local\Temp\sedg.o
+___int_sp 0 0 STACK 2 stack C:\Users\vema3\AppData\Local\Temp\ssho.o
 i1___bmul 8F0 0 CODE 0 text10 dist/default/production\Lab03_digital2.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -479,7 +479,7 @@ _d_flag 41 0 BANK0 1 bssBANK0 dist/default/production\Lab03_digital2.X.productio
 _decena 3F 0 BANK0 1 bssBANK0 dist/default/production\Lab03_digital2.X.production.o
 __end_of_isr 6D4 0 CODE 0 text9 dist/default/production\Lab03_digital2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\vema3\AppData\Local\Temp\sedg.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\vema3\AppData\Local\Temp\ssho.o
 __pdataBANK0 46 0 BANK0 1 dataBANK0 dist/default/production\Lab03_digital2.X.production.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
 __size_of___wmul 0 0 ABS 0 - dist/default/production\Lab03_digital2.X.production.o
